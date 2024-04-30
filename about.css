@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: #fff;
+    font-family: "Mukta", sans-serif;
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav p{
+    font-size: 40px;
+    font-family: "Yellowtail", cursive;
+    font-weight: 400;
+    color: rgb(126, 121, 121);
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(126, 121, 121);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+#about{
+    padding: 60px 0;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    animation: slideformleft 1s ease forwards;
+}
+/* Added Animation */
+@keyframes slideformleft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 50%;
+    /* margin-top: -100%; */
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.My-bio{
+    margin-top: 2%;
+    font-size: 1.2rem;
+    font-family: "Mukta", sans-serif;
+}
+.sub-title{
+    font-size: 50px;
+    font-weight: 600;
+    font-family: "Mukta", sans-serif;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+    background: rgb(126, 121, 121);
+}
+.skill-list{
+    font-size: 1.1rem;
+    font-family: "Mukta", sans-serif;
+}
+.exp{
+    font-size: 1.1rem;
+    font-family: "Mukta", sans-serif;
+    line-height: 32px;
+}
+.edu{
+    font-size: 1.1rem;
+    font-family: "Mukta", sans-serif;
+    line-height: 32px;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: rgb(126, 121, 121);
+    font-size: 1.4rem;
+}
+#score{
+    font-size: 1.2rem;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+/* Footer */
+.copyright{
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(93, 90, 90);
+    color: #fff;
+    margin-top: 30px;
+    font-weight: 300;
+    font-family: "Mukta", sans-serif;
+}
+.copyright i{
+    color: red;
+}
+nav .fa-solid{
+    display: none;
+    font-size: 25px;
+}
+
+/* Media Query */
+@media only screen and (max-width:600px){
+
+    nav p{
+        font-size: 30px;
+    }
+    .sub-title{
+        font-size: 1.8rem;
+    }
+    .My-bio{
+        font-size: 1rem;
+        font-family: "Mukta", sans-serif;
+        font-weight: 100;
+    }
+    .tab-links{
+        font-size: 1rem;
+        font-family: "Mukta", sans-serif;
+        font-weight: 100;
+    }
+    .edu .exp{
+        font-size: 0.5rem;
+        font-family: "Mukta", sans-serif;
+        font-weight: 100;
+    }
+    .copyright{
+        margin-top: 40%;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+
+    /* For hiding menu */
+    nav ul{
+        background-color: rgb(126, 121, 121);
+        position: fixed;
+        top: 0;
+        /* -200px bcz to hide the menu and adding JS code for clicking
+        the menu */
+        right: -200px; 
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul li a{
+        font-size: 19px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .copyright{
+        font-size: 0.8rem;
+    }
+}
